@@ -43,6 +43,18 @@ get('summary-number').textContent='PC FEATURE / '+String(slide.feature).padStart
 get('tour-category').textContent=slide.feature?'0'+slide.feature+' / '+names[slide.feature]:'PC 기능 둘러보기';get('tour-title').textContent=slide.title;get('tour-copy').textContent=slide.copy;const featureSlides=slides.filter(s=>s.feature===slide.feature);get('tour-counter').textContent=slide.feature?'0'+slide.feature+' 기능 · '+(featureSlides.indexOf(slide)+1)+' / '+featureSlides.length+' 단계':'PC / 06 FEATURES';get('tour-prev').disabled=current===0;get('tour-next').disabled=current===slides.length-1;
 updatePages(slide);document.querySelectorAll('.tour-feature').forEach(button=>{const active=Number(button.dataset.feature)===slide.feature;button.classList.toggle('is-current',active);if(active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});}
 get('tour-start').addEventListener('click',()=>{show(1);get('tour-next').focus({preventScroll:true});});get('tour-prev').addEventListener('click',()=>show(current-1));get('tour-next').addEventListener('click',()=>show(current+1));
-document.querySelectorAll('.tour-feature').forEach(button=>button.addEventListener('click',()=>{show(slides.findIndex(s=>s.feature===Number(button.dataset.feature)));document.querySelector('.monitor-tour').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});}));
-document.addEventListener('keydown',event=>{if(event.altKey||event.ctrlKey||event.metaKey||event.shiftKey||event.target.closest('header, input, textarea, select, [contenteditable="true"]'))return;if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();show(current+(event.key==='ArrowRight'?1:-1));}});
+const development=[
+{stack:['Electron','Supabase Auth','Edge Functions API'],copy:'앱에서 이메일 인증번호 발송·확인 API를 호출합니다. 서버에서 인증 여부를 검증하고, 가입 요청과 관리자 승인을 나누어 처리했습니다.'},
+{stack:['JavaScript','ExcelJS','XLSX'],copy:'엑셀 파일을 읽어 업무 양식에 맞게 데이터를 정리하고 결과 파일을 생성합니다. 거래처마다 다른 양식을 반복해서 수작업으로 바꾸는 과정을 줄였습니다.'},
+{stack:['PostgreSQL','Edge Functions API','Electron'],copy:'품목과 위치 정보를 데이터베이스에 저장하고 API로 조회·등록·수정합니다. PC와 Android가 같은 정보를 공유하도록 연결했습니다.'},
+{stack:['PostgreSQL','Edge Functions API','JavaScript'],copy:'처리업무를 등록하고 시작·중단·완료 상태를 API로 관리합니다. 직원들이 PC와 Android에서 같은 업무 현황을 확인할 수 있게 구현했습니다.'},
+{stack:['Node.js','파일 시스템','Electron IPC'],copy:'공용 폴더에 일정과 첨부파일을 저장해 직원들과 공유합니다. 화면의 요청을 Electron 메인 프로세스로 전달하고 파일을 읽고 저장하도록 구성했습니다.'},
+{stack:['JSZip','XML','Node.js'],copy:'엑셀 양식 내부의 XML과 이미지 데이터를 처리해 안전교육일지를 만듭니다. 기존 양식에 필요한 내용과 사진을 반영하는 반복 문서 작성 기능을 구현했습니다.'}
+];
+const devDialog=get('dev-dialog');let devTrigger;
+document.querySelectorAll('.tour-feature').forEach(button=>button.addEventListener('click',()=>{const feature=Number(button.dataset.feature);const detail=development[feature-1];devTrigger=button;get('dev-number').textContent='PC / DEVELOPMENT 0'+feature;get('dev-title').textContent=names[feature];get('dev-copy').textContent=detail.copy;get('dev-stack').replaceChildren(...detail.stack.map(name=>{const badge=document.createElement('span');badge.textContent=name;return badge;}));devDialog.showModal();}));
+get('dev-close').addEventListener('click',()=>devDialog.close());
+devDialog.addEventListener('click',event=>{if(event.target!==devDialog)return;const rect=devDialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)devDialog.close();});
+devDialog.addEventListener('close',()=>devTrigger?.focus({preventScroll:true}));
+document.addEventListener('keydown',event=>{if(devDialog.open||event.altKey||event.ctrlKey||event.metaKey||event.shiftKey||event.target.closest('header, input, textarea, select, [contenteditable="true"]'))return;if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();show(current+(event.key==='ArrowRight'?1:-1));}});
 show(0);
