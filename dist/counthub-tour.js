@@ -37,8 +37,15 @@ function updatePages(slide){
  }
  stepButtons.forEach(({button,index})=>{if(index===current)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});
 }
-function show(index){current=Math.max(0,Math.min(slides.length-1,index));const slide=slides[current];get('tour-welcome').hidden=current!==0;get('tour-image').hidden=!slide.image;get('tour-summary').hidden=current===0||!!slide.image;
-if(slide.image){get('tour-image').src='./assets/signup/'+slide.image+'.png?v=20260921-new';get('tour-image').alt=slide.alt;}
+function show(index){current=Math.max(0,Math.min(slides.length-1,index));const slide=slides[current];get('tour-welcome').hidden=current!==0;get('tour-image').toggleAttribute('hidden',!slide.image);get('tour-summary').hidden=current===0||!!slide.image;
+const focusAreas={
+ '01-form':{box:[650,205,620,672],size:[1920,1032]},
+ '03-email':{box:[548,153,526,449],size:[1574,712]},
+ '02-verification':{box:[749,379,423,323],size:[1920,1032]},
+ '04-approval':{box:[1020,393,463,119],size:[1920,1032]}
+};
+const monitor=document.querySelector('.monitor');monitor.classList.toggle('has-focused-image',!!slide.image);
+if(slide.image){const area=focusAreas[slide.image];get('tour-image').setAttribute('viewBox',area.box.join(' '));get('tour-image').setAttribute('aria-label',slide.alt+' — 주요 영역 확대');get('tour-image-source').setAttribute('href','./assets/signup/'+slide.image+'.png?v=20260921-new');get('tour-image-source').setAttribute('width',area.size[0]);get('tour-image-source').setAttribute('height',area.size[1]);monitor.style.setProperty('--focus-ratio',area.box[2]/area.box[3]);}
 get('summary-number').textContent='PC FEATURE / '+String(slide.feature).padStart(2,'0');get('summary-title').textContent=slide.title;get('summary-copy').textContent=slide.copy;
 get('tour-category').textContent=slide.feature?'0'+slide.feature+' / '+names[slide.feature]:'PC 기능 둘러보기';get('tour-title').textContent=slide.title;const featureSlides=slides.filter(s=>s.feature===slide.feature);get('tour-counter').textContent=slide.feature?'0'+slide.feature+' 기능 · '+(featureSlides.indexOf(slide)+1)+' / '+featureSlides.length+' 단계':'PC / 06 FEATURES';get('tour-prev').disabled=current===0;get('tour-next').disabled=current===slides.length-1;
 updatePages(slide);document.querySelectorAll('.tour-feature').forEach(button=>{const active=Number(button.dataset.feature)===slide.feature;button.classList.toggle('is-current',active);if(active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});}
