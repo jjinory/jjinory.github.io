@@ -38,7 +38,7 @@ function updatePages(slide){
  stepButtons.forEach(({button,index})=>{if(index===current)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});
 }
 function show(index){current=Math.max(0,Math.min(slides.length-1,index));const slide=slides[current];get('tour-welcome').hidden=current!==0;get('tour-image').hidden=!slide.image;get('tour-summary').hidden=current===0||!!slide.image;
-if(slide.image){get('tour-image').src='./assets/signup/'+slide.image+'.png';get('tour-image').alt=slide.alt;}
+if(slide.image){get('tour-image').src='./assets/signup/'+slide.image+'.png?v=20260921-new';get('tour-image').alt=slide.alt;}
 get('summary-number').textContent='PC FEATURE / '+String(slide.feature).padStart(2,'0');get('summary-title').textContent=slide.title;get('summary-copy').textContent=slide.copy;
 get('tour-category').textContent=slide.feature?'0'+slide.feature+' / '+names[slide.feature]:'PC 기능 둘러보기';get('tour-title').textContent=slide.title;const featureSlides=slides.filter(s=>s.feature===slide.feature);get('tour-counter').textContent=slide.feature?'0'+slide.feature+' 기능 · '+(featureSlides.indexOf(slide)+1)+' / '+featureSlides.length+' 단계':'PC / 06 FEATURES';get('tour-prev').disabled=current===0;get('tour-next').disabled=current===slides.length-1;
 updatePages(slide);document.querySelectorAll('.tour-feature').forEach(button=>{const active=Number(button.dataset.feature)===slide.feature;button.classList.toggle('is-current',active);if(active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});}
