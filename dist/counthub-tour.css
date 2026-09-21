@@ -10,5 +10,6 @@
 
 .tour-description{min-height:80px}.tour-description h2{font-size:21px;line-height:1.65;margin:0}@media(max-width:760px){.tour-description{min-height:95px}.tour-description h2{font-size:17px;line-height:1.7}}
 
-/* Fit each real screenshot's relevant area without surrounding desktop space. */
-.monitor-screen>svg{display:block;width:100%;height:100%;background:#fff}.monitor.has-focused-image{width:min(900px,calc(62svh * var(--focus-ratio)));max-width:100%}.monitor.has-focused-image .monitor-screen{aspect-ratio:var(--focus-ratio)}.monitor.has-focused-image .monitor-chin{height:24px}.monitor.has-focused-image .monitor-screen>svg{overflow:hidden}@media(max-width:760px){.monitor.has-focused-image{width:100%}.monitor.has-focused-image .monitor-chin{height:19px}}
+
+/* Keep every screen at the supplied 1600 by 1000 ratio. */
+.monitor .monitor-screen{aspect-ratio:16/10}.monitor-screen>img{width:100%;height:100%;object-fit:contain;object-position:center}
