@@ -1,24 +1,24 @@
 const slides = [
-{feature:0,label:'시작',title:'매일의 물류 업무를 한곳에서.',copy:'기능 알아보기를 누르거나 오른쪽 화살표로 화면을 넘겨보세요.'},
-{feature:1,label:'가입 정보',title:'가입에 필요한 정보를 입력합니다.',copy:'아이디와 비밀번호, 이름, 이메일을 입력한 뒤 이메일 인증을 진행합니다.',image:'01-form',alt:'CountHub 회원가입 정보 입력 화면'},
-{feature:1,label:'인증 메일',title:'입력한 이메일로 인증번호가 도착합니다.',copy:'메일로 받은 6자리 인증번호는 10분 동안 사용할 수 있습니다.',image:'03-email',alt:'CountHub에서 실제 발송한 인증번호 메일'},
-{feature:1,label:'번호 확인',title:'앱 안에서 인증번호를 확인합니다.',copy:'6자리 번호를 입력해 인증을 마치고 회원가입을 요청합니다.',image:'02-verification',alt:'앱 안의 이메일 인증번호 입력 화면'},
-{feature:1,label:'관리자 승인',title:'관리자 승인 후 업무를 시작합니다.',copy:'관리자만 회원 관리 메뉴에서 가입 요청을 확인하고 승인할 수 있습니다.',image:'04-approval',alt:'관리자 전용 회원 관리 및 승인 화면'},
-{feature:2,label:'파일 준비',title:'변환할 입출고 파일을 준비합니다.',copy:'거래처마다 다른 엑셀 파일을 업무에 맞는 양식으로 정리하는 과정입니다.'},
-{feature:2,label:'양식 변환',title:'업무에 필요한 양식으로 변환합니다.',copy:'반복해서 정리하던 엑셀 데이터를 WMS 등록 등 필요한 양식으로 바꿉니다.'},
-{feature:2,label:'결과 활용',title:'변환한 파일을 업무에 사용합니다.',copy:'변환 결과를 확인하고 입출고 전산 등록 작업에 활용합니다.'},
-{feature:3,label:'품목 찾기',title:'찾으려는 품목을 확인합니다.',copy:'직원들과 공유하는 품목위치 데이터에서 필요한 품목을 찾습니다.'},
-{feature:3,label:'위치 등록',title:'품목의 보관 위치를 기록합니다.',copy:'품목과 위치 정보를 등록하거나 변경된 내용을 수정합니다.'},
-{feature:3,label:'직원과 공유',title:'같은 위치 정보를 함께 확인합니다.',copy:'저장한 품목위치를 PC와 Android에서 함께 사용합니다.'},
-{feature:4,label:'업무 등록',title:'함께 처리할 업무를 등록합니다.',copy:'직원들이 확인할 수 있도록 처리할 업무를 공유합니다.'},
-{feature:4,label:'진행 상태',title:'업무 진행 상태를 관리합니다.',copy:'작업 상황에 따라 시작·중단·완료 상태를 변경합니다.'},
-{feature:4,label:'공유 확인',title:'동료의 업무 현황을 확인합니다.',copy:'PC와 Android에서 같은 처리업무와 상태를 확인합니다.'},
-{feature:5,label:'일정 등록',title:'함께 확인할 일정을 등록합니다.',copy:'직원들과 공유할 업무 일정을 일정표에 기록합니다.'},
-{feature:5,label:'자료 첨부',title:'일정에 필요한 자료를 함께 관리합니다.',copy:'일정과 관련된 첨부파일을 함께 공유합니다.'},
-{feature:5,label:'일정 공유',title:'공용 폴더로 일정을 공유합니다.',copy:'직원들이 함께 사용하는 폴더를 통해 일정과 자료를 확인합니다.'},
-{feature:6,label:'양식 준비',title:'안전교육일지 양식을 준비합니다.',copy:'반복 작성하는 안전교육일지를 엑셀 양식으로 제작하는 과정입니다.'},
-{feature:6,label:'사진 활용',title:'교육 사진을 문서에 활용합니다.',copy:'교육일지에 필요한 사진을 준비해 문서 작성에 활용합니다.'},
-{feature:6,label:'일지 제작',title:'안전교육일지를 제작합니다.',copy:'엑셀 양식과 사진으로 반복 문서를 작성합니다.'}
+{feature:0,label:'시작',title:'기능 알아보기를 눌러 PC 업무 기능을 살펴보세요.',copy:'기능 알아보기를 누르거나 오른쪽 화살표로 화면을 넘겨보세요.'},
+{feature:1,label:'가입 정보',title:'가입 정보를 입력하고 이메일 인증을 시작합니다.',copy:'아이디와 비밀번호, 이름, 이메일을 입력한 뒤 이메일 인증을 진행합니다.',image:'01-form',alt:'CountHub 회원가입 정보 입력 화면'},
+{feature:1,label:'인증 메일',title:'이메일로 받은 6자리 인증번호는 10분 동안 유효합니다.',copy:'메일로 받은 6자리 인증번호는 10분 동안 사용할 수 있습니다.',image:'03-email',alt:'CountHub에서 실제 발송한 인증번호 메일'},
+{feature:1,label:'번호 확인',title:'앱에서 인증번호를 확인한 뒤 회원가입을 요청합니다.',copy:'6자리 번호를 입력해 인증을 마치고 회원가입을 요청합니다.',image:'02-verification',alt:'앱 안의 이메일 인증번호 입력 화면'},
+{feature:1,label:'관리자 승인',title:'관리자 전용 메뉴에서 가입 요청을 승인하면 업무를 시작할 수 있습니다.',copy:'관리자만 회원 관리 메뉴에서 가입 요청을 확인하고 승인할 수 있습니다.',image:'04-approval',alt:'관리자 전용 회원 관리 및 승인 화면'},
+{feature:2,label:'파일 준비',title:'양식이 서로 다른 거래처의 입출고 엑셀 파일을 준비합니다.',copy:'거래처마다 다른 엑셀 파일을 업무에 맞는 양식으로 정리하는 과정입니다.'},
+{feature:2,label:'양식 변환',title:'엑셀 데이터를 WMS 등록 등 업무에 필요한 양식으로 변환합니다.',copy:'반복해서 정리하던 엑셀 데이터를 WMS 등록 등 필요한 양식으로 바꿉니다.'},
+{feature:2,label:'결과 활용',title:'변환 결과를 확인하고 입출고 전산 등록에 활용합니다.',copy:'변환 결과를 확인하고 입출고 전산 등록 작업에 활용합니다.'},
+{feature:3,label:'품목 찾기',title:'공유된 품목위치 데이터에서 필요한 품목을 찾습니다.',copy:'직원들과 공유하는 품목위치 데이터에서 필요한 품목을 찾습니다.'},
+{feature:3,label:'위치 등록',title:'품목의 보관 위치를 등록하거나 변경된 위치로 수정합니다.',copy:'품목과 위치 정보를 등록하거나 변경된 내용을 수정합니다.'},
+{feature:3,label:'직원과 공유',title:'저장한 품목위치를 PC와 Android에서 함께 확인합니다.',copy:'저장한 품목위치를 PC와 Android에서 함께 사용합니다.'},
+{feature:4,label:'업무 등록',title:'직원들과 함께 처리할 업무를 등록합니다.',copy:'직원들이 확인할 수 있도록 처리할 업무를 공유합니다.'},
+{feature:4,label:'진행 상태',title:'업무의 진행 상태를 시작·중단·완료로 관리합니다.',copy:'작업 상황에 따라 시작·중단·완료 상태를 변경합니다.'},
+{feature:4,label:'공유 확인',title:'PC와 Android에서 같은 업무 현황을 확인합니다.',copy:'PC와 Android에서 같은 처리업무와 상태를 확인합니다.'},
+{feature:5,label:'일정 등록',title:'직원들과 공유할 업무 일정을 등록합니다.',copy:'직원들과 공유할 업무 일정을 일정표에 기록합니다.'},
+{feature:5,label:'자료 첨부',title:'일정에 필요한 첨부파일을 함께 공유합니다.',copy:'일정과 관련된 첨부파일을 함께 공유합니다.'},
+{feature:5,label:'일정 공유',title:'공용 폴더를 통해 직원들과 일정과 자료를 공유합니다.',copy:'직원들이 함께 사용하는 폴더를 통해 일정과 자료를 확인합니다.'},
+{feature:6,label:'양식 준비',title:'안전교육일지 제작에 사용할 엑셀 양식을 준비합니다.',copy:'반복 작성하는 안전교육일지를 엑셀 양식으로 제작하는 과정입니다.'},
+{feature:6,label:'사진 활용',title:'교육일지에 넣을 사진을 준비합니다.',copy:'교육일지에 필요한 사진을 준비해 문서 작성에 활용합니다.'},
+{feature:6,label:'일지 제작',title:'엑셀 양식과 사진을 활용해 안전교육일지를 제작합니다.',copy:'엑셀 양식과 사진으로 반복 문서를 작성합니다.'}
 ];
 const names=['','이메일 인증 회원가입','입출고 파일 변환','품목위치 저장·공유','처리업무 공유','일정표 공유','안전교육일지 제작'];
 let current=0;
@@ -40,7 +40,7 @@ function updatePages(slide){
 function show(index){current=Math.max(0,Math.min(slides.length-1,index));const slide=slides[current];get('tour-welcome').hidden=current!==0;get('tour-image').hidden=!slide.image;get('tour-summary').hidden=current===0||!!slide.image;
 if(slide.image){get('tour-image').src='./assets/signup/'+slide.image+'.png';get('tour-image').alt=slide.alt;}
 get('summary-number').textContent='PC FEATURE / '+String(slide.feature).padStart(2,'0');get('summary-title').textContent=slide.title;get('summary-copy').textContent=slide.copy;
-get('tour-category').textContent=slide.feature?'0'+slide.feature+' / '+names[slide.feature]:'PC 기능 둘러보기';get('tour-title').textContent=slide.title;get('tour-copy').textContent=slide.copy;const featureSlides=slides.filter(s=>s.feature===slide.feature);get('tour-counter').textContent=slide.feature?'0'+slide.feature+' 기능 · '+(featureSlides.indexOf(slide)+1)+' / '+featureSlides.length+' 단계':'PC / 06 FEATURES';get('tour-prev').disabled=current===0;get('tour-next').disabled=current===slides.length-1;
+get('tour-category').textContent=slide.feature?'0'+slide.feature+' / '+names[slide.feature]:'PC 기능 둘러보기';get('tour-title').textContent=slide.title;const featureSlides=slides.filter(s=>s.feature===slide.feature);get('tour-counter').textContent=slide.feature?'0'+slide.feature+' 기능 · '+(featureSlides.indexOf(slide)+1)+' / '+featureSlides.length+' 단계':'PC / 06 FEATURES';get('tour-prev').disabled=current===0;get('tour-next').disabled=current===slides.length-1;
 updatePages(slide);document.querySelectorAll('.tour-feature').forEach(button=>{const active=Number(button.dataset.feature)===slide.feature;button.classList.toggle('is-current',active);if(active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});}
 get('tour-start').addEventListener('click',()=>{show(1);get('tour-next').focus({preventScroll:true});});get('tour-prev').addEventListener('click',()=>show(current-1));get('tour-next').addEventListener('click',()=>show(current+1));
 const development=[
