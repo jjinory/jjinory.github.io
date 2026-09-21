@@ -2,15 +2,17 @@ const projectNav = document.querySelector('.project-nav');
 const toggle = document.querySelector('.project-nav-toggle');
 const menu = document.querySelector('#project-menu');
 function setMenu(open) {
+  projectNav.classList.toggle('menu-dismissed', !open);
   toggle.setAttribute('aria-expanded', String(open));
   menu.hidden = !open;
 }
 toggle.addEventListener('click', () => setMenu(menu.hidden));
-projectNav.addEventListener('pointerenter', event => {
-  if (event.pointerType === 'mouse') setMenu(true);
+projectNav.addEventListener('mouseenter', () => {
+  if (window.matchMedia('(hover: hover)').matches) setMenu(true);
 });
-projectNav.addEventListener('pointerleave', event => {
-  if (event.pointerType === 'mouse' && !projectNav.contains(document.activeElement)) setMenu(false);
+projectNav.addEventListener('mouseleave', () => {
+  if (!projectNav.contains(document.activeElement)) setMenu(false);
+  projectNav.classList.remove('menu-dismissed');
 });
 projectNav.addEventListener('focusout', event => {
   if (!projectNav.contains(event.relatedTarget)) setMenu(false);
