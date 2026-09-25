@@ -4,6 +4,11 @@ const slides = [
 {feature:1,label:'인증 메일',title:'이메일로 받은 6자리 인증번호는 10분 동안 유효합니다.',copy:'메일로 받은 6자리 인증번호는 10분 동안 사용할 수 있습니다.',image:'03-email',alt:'CountHub에서 실제 발송한 인증번호 메일'},
 {feature:1,label:'번호 확인',title:'앱에서 인증번호를 확인한 뒤 회원가입을 요청합니다.',copy:'6자리 번호를 입력해 인증을 마치고 회원가입을 요청합니다.',image:'02-verification',alt:'앱 안의 이메일 인증번호 입력 화면'},
 {feature:1,label:'관리자 승인',title:'관리자 전용 메뉴에서 가입 요청을 승인하면 업무를 시작할 수 있습니다.',copy:'관리자만 회원 관리 메뉴에서 가입 요청을 확인하고 승인할 수 있습니다.',image:'04-approval',alt:'관리자 전용 회원 관리 및 승인 화면'},
+{feature:2,label:'기준정보 설정',title:'설정 버튼에서 셀러·상품구분·쇼핑몰·양식지를 등록하고 관리합니다.',copy:'설정 → DB: 변환 화면에서 사용할 기준정보를 추가하고 목록 순서를 정합니다.'},
+{feature:2,label:'양식지 컬럼',title:'양식지마다 상품명·수량·SKU 등이 들어 있는 엑셀 열을 지정합니다.',copy:'설정 → 양식지 컬럼: SKU, 상품명, 유통기한, LOT, 입고예정수량의 열 위치를 연결합니다.'},
+{feature:2,label:'셀러별 양식',title:'셀러별 기본 양식지를 연결해 셀러 선택 시 자동으로 불러옵니다.',copy:'설정 → 셀러-양식지: 거래처마다 사용할 양식을 지정하고 필요하면 연결을 해제합니다.'},
+{feature:2,label:'기본 템플릿',title:'입고·검수·거래명세서에 사용할 기본 엑셀 양식을 등록합니다.',copy:'설정 → 템플릿 기본양식: 입고파일, 입고검수, 거래명세서, 출고검수 양식을 클릭하거나 드래그해 등록합니다.'},
+{feature:2,label:'입·출고지 관리',title:'입·출고지의 이름·주소·담당자·전화번호를 등록하고 수정합니다.',copy:'설정 → 입/출고지 관리: 입고와 출고에서 사용할 장소 정보를 저장하고 검색합니다.'},
 {feature:2,label:'파일 준비',title:'양식이 서로 다른 거래처의 입출고 엑셀 파일을 준비합니다.',copy:'거래처마다 다른 엑셀 파일을 업무에 맞는 양식으로 정리하는 과정입니다.'},
 {feature:2,label:'양식 변환',title:'엑셀 데이터를 WMS 등록 등 업무에 필요한 양식으로 변환합니다.',copy:'반복해서 정리하던 엑셀 데이터를 WMS 등록 등 필요한 양식으로 바꿉니다.'},
 {feature:2,label:'결과 활용',title:'변환 결과를 확인하고 입출고 전산 등록에 활용합니다.',copy:'변환 결과를 확인하고 입출고 전산 등록 작업에 활용합니다.'},
@@ -45,7 +50,7 @@ updatePages(slide);document.querySelectorAll('.tour-feature').forEach(button=>{c
 get('tour-start').addEventListener('click',()=>{show(1);get('tour-next').focus({preventScroll:true});});get('tour-prev').addEventListener('click',()=>show(current-1));get('tour-next').addEventListener('click',()=>show(current+1));
 const development=[
 {stack:['Electron','Supabase Auth','Edge Functions API'],copy:'앱에서 이메일 인증번호 발송·확인 API를 호출합니다. 서버에서 인증 여부를 검증하고, 가입 요청과 관리자 승인을 나누어 처리했습니다.'},
-{stack:['JavaScript','ExcelJS','XLSX'],copy:'엑셀 파일을 읽어 업무 양식에 맞게 데이터를 정리하고 결과 파일을 생성합니다. 거래처마다 다른 양식을 반복해서 수작업으로 바꾸는 과정을 줄였습니다.'},
+{stack:['JavaScript','ExcelJS','XLSX'],copy:'설정 화면에서 거래처별 엑셀 열 위치와 기본 양식을 지정하고, 셀러 선택 시 연결된 양식을 불러오도록 구현했습니다. 등록한 템플릿으로 결과 파일을 생성하며, 기준정보와 입·출고지 정보도 관리할 수 있습니다.'},
 {stack:['PostgreSQL','Edge Functions API','Electron'],copy:'품목과 위치 정보를 데이터베이스에 저장하고 API로 조회·등록·수정합니다. PC와 Android가 같은 정보를 공유하도록 연결했습니다.'},
 {stack:['PostgreSQL','Edge Functions API','JavaScript'],copy:'처리업무를 등록하고 시작·중단·완료 상태를 API로 관리합니다. 직원들이 PC와 Android에서 같은 업무 현황을 확인할 수 있게 구현했습니다.'},
 {stack:['Node.js','파일 시스템','Electron IPC'],copy:'공용 폴더에 일정과 첨부파일을 저장해 직원들과 공유합니다. 화면의 요청을 Electron 메인 프로세스로 전달하고 파일을 읽고 저장하도록 구성했습니다.'},
