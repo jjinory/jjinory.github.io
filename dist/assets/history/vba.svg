@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none">
+  <rect x="42" y="24" width="149" height="115" rx="5" fill="#f6f9f7" stroke="#244c45" stroke-width="2.5"/>
+  <path d="M47 24h139a5 5 0 0 1 5 5v24H42V29a5 5 0 0 1 5-5Z" fill="#244c45"/>
+  <text x="57" y="44" fill="#eff7ea" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1">VBA</text>
+  <path d="M156 38h8m8 0h5" stroke="#a8c5b4" stroke-width="2" stroke-linecap="round"/>
+  <path d="M56 67h121v56H56z" fill="#edf2ee" stroke="#9fb5a7" stroke-width="1.5"/>
+  <path d="M56 67h121v18H56z" fill="#dce9e1"/>
+  <path d="M94 67v56m42-56v56M56 85h121M56 104h121" stroke="#9fb5a7" stroke-width="1.5"/>
+  <path d="M96 87h38v15H96z" fill="#b8f168"/>
+  <path d="M64 76h18m19 0h25m18 0h23M64 94h18m-18 19h18m19 0h25" stroke="#527467" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="181" cy="121" r="22" fill="#244c45" stroke="#fff" stroke-width="4"/>
+  <path d="m176 112 14 9-14 9z" fill="#b8f168" stroke="#b8f168" stroke-linejoin="round"/>
+</svg>

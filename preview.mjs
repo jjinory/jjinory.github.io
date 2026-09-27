@@ -1,9 +1,35 @@
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
-const files = { '/assets/safety-journal/00-entry.jpg': ['assets/safety-journal/00-entry.jpg','image/jpeg'], '/assets/safety-journal/01-photos.jpg': ['assets/safety-journal/01-photos.jpg','image/jpeg'], '/assets/safety-journal/02-info.jpg': ['assets/safety-journal/02-info.jpg','image/jpeg'], '/assets/safety-journal/03-output.jpg': ['assets/safety-journal/03-output.jpg','image/jpeg'], '/assets/tasks/00-entry.jpg': ['assets/tasks/00-entry.jpg','image/jpeg'], '/assets/tasks/01-register.jpg': ['assets/tasks/01-register.jpg','image/jpeg'], '/assets/tasks/02-share.jpg': ['assets/tasks/02-share.jpg','image/jpeg'], '/assets/tasks/03-status.jpg': ['assets/tasks/03-status.jpg','image/jpeg'], '/assets/item-location/00-entry.jpg': ['assets/item-location/00-entry.jpg','image/jpeg'], '/assets/item-location/01-register.jpg': ['assets/item-location/01-register.jpg','image/jpeg'], '/assets/item-location/02-share.jpg': ['assets/item-location/02-share.jpg','image/jpeg'], '/assets/item-location/03-search.jpg': ['assets/item-location/03-search.jpg','image/jpeg'], '/assets/schedule/00-entry.jpg': ['assets/schedule/00-entry.jpg','image/jpeg'], '/assets/schedule/01-folder.jpg': ['assets/schedule/01-folder.jpg','image/jpeg'], '/assets/schedule/02-register.jpg': ['assets/schedule/02-register.jpg','image/jpeg'], '/assets/schedule/03-share.jpg': ['assets/schedule/03-share.jpg','image/jpeg'], '/assets/conversion/00-entry.jpg': ['assets/conversion/00-entry.jpg','image/jpeg'], '/assets/conversion/01-reference.jpg': ['assets/conversion/01-reference.jpg','image/jpeg'], '/assets/conversion/02-columns.jpg': ['assets/conversion/02-columns.jpg','image/jpeg'], '/assets/conversion/03-seller-form.jpg': ['assets/conversion/03-seller-form.jpg','image/jpeg'], '/assets/conversion/04-templates.jpg': ['assets/conversion/04-templates.jpg','image/jpeg'], '/assets/conversion/05-locations.jpg': ['assets/conversion/05-locations.jpg','image/jpeg'], '/assets/conversion/06-source.jpg': ['assets/conversion/06-source.jpg','image/jpeg'], '/assets/conversion/07-convert.jpg': ['assets/conversion/07-convert.jpg','image/jpeg'], '/assets/conversion/08-results.jpg': ['assets/conversion/08-results.jpg','image/jpeg'], '/assets/signup/01-form.jpg': ['assets/signup/01-form.jpg','image/jpeg'], '/assets/signup/03-email.jpg': ['assets/signup/03-email.jpg','image/jpeg'], '/assets/signup/02-verification.jpg': ['assets/signup/02-verification.jpg','image/jpeg'], '/assets/signup/04-approval.jpg': ['assets/signup/04-approval.jpg','image/jpeg'], '/assets/signup/01-form.png': ['assets/signup/01-form.png','image/png'], '/assets/signup/02-verification.png': ['assets/signup/02-verification.png','image/png'], '/assets/signup/03-email.png': ['assets/signup/03-email.png','image/png'], '/assets/signup/04-approval.png': ['assets/signup/04-approval.png','image/png'], '/counthub-mobile.html': ['counthub-mobile.html','text/html'], '/counthub-tour.js': ['counthub-tour.js','text/javascript'], '/counthub-tour.css': ['counthub-tour.css','text/css'], '/counthub.html': ['counthub.html','text/html'], '/': ['index.html','text/html'], '/index.html': ['index.html','text/html'], '/style.css': ['style.css','text/css'], '/app.js': ['app.js','text/javascript'] };
+import { extname, resolve, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = fileURLToPath(new URL('./dist/', import.meta.url));
+const mimeTypes = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
+  '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon',
+};
 http.createServer(async (req, res) => {
-  const file = files[new URL(req.url, 'http://localhost').pathname];
-  if (!file) { res.writeHead(404); res.end('Not found'); return; }
-  try { const data = await readFile(new URL('./dist/' + file[0], import.meta.url)); res.writeHead(200, { 'Content-Type': file[1] + '; charset=utf-8' }); res.end(data); }
-  catch { res.writeHead(500); res.end('Unable to load file'); }
+  if (!['GET', 'HEAD'].includes(req.method)) {
+    res.writeHead(405, { Allow: 'GET, HEAD' });
+    res.end();
+    return;
+  }
+  let pathname;
+  try { pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); }
+  catch { res.writeHead(400); res.end('Bad request'); return; }
+  const file = resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
+  if (!file.startsWith(resolve(root) + sep) || !mimeTypes[extname(file)]) {
+    res.writeHead(404); res.end('Not found'); return;
+  }
+  try {
+    const data = await readFile(file);
+    res.writeHead(200, { 'Content-Type': mimeTypes[extname(file)], 'Cache-Control': 'no-store' });
+    res.end(req.method === 'HEAD' ? undefined : data);
+  } catch (error) {
+    res.writeHead(error.code === 'ENOENT' || error.code === 'EISDIR' ? 404 : 500);
+    res.end('Unable to load file');
+  }
 }).listen(4173, '127.0.0.1', () => console.log('Portfolio preview: http://127.0.0.1:4173'));

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none">
+  <rect x="27" y="25" width="154" height="104" rx="6" fill="#244c45" stroke="#244c45" stroke-width="2.5"/>
+  <path d="M35 34h138v83H35z" fill="#f3f8f3"/>
+  <path d="M35 34h138v21H35z" fill="#dce9e1"/>
+  <text x="44" y="49" fill="#244c45" font-family="Arial,sans-serif" font-size="11" font-weight="700">CH</text>
+  <path d="M45 66h21v39H45z" fill="#dce9e1"/>
+  <path d="M76 66h37v16H76z" fill="#b8f168"/>
+  <path d="M122 66h40v16h-40z" fill="#dce9e1"/>
+  <path d="M77 94h78m-78 10h52" stroke="#87a393" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="m93 129-3 12m26-12 3 12m-40 2h51" stroke="#244c45" stroke-width="3" stroke-linecap="round"/>
+  <rect x="157" y="62" width="51" height="83" rx="8" fill="#244c45" stroke="#fff" stroke-width="4"/>
+  <rect x="163" y="69" width="39" height="67" rx="3" fill="#edf4ed"/>
+  <path d="M179 74h8" stroke="#527467" stroke-width="2" stroke-linecap="round"/>
+  <path d="M170 84h25v13h-25z" fill="#b8f168"/>
+  <path d="M171 107h22m-22 8h22m-22 8h13" stroke="#87a393" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

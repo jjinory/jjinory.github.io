@@ -1,8 +1,8 @@
 const projectNav = document.querySelector('.project-nav');
 const toggle = document.querySelector('.project-nav-toggle');
 const menu = document.querySelector('#project-menu');
+
 function setMenu(open) {
-  projectNav.classList.toggle('menu-dismissed', !open);
   toggle.setAttribute('aria-expanded', String(open));
   menu.hidden = !open;
 }
@@ -12,7 +12,6 @@ projectNav.addEventListener('mouseenter', () => {
 });
 projectNav.addEventListener('mouseleave', () => {
   if (!projectNav.contains(document.activeElement)) setMenu(false);
-  projectNav.classList.remove('menu-dismissed');
 });
 projectNav.addEventListener('focusout', event => {
   if (!projectNav.contains(event.relatedTarget)) setMenu(false);
@@ -33,10 +32,13 @@ projectNav.addEventListener('keydown', event => {
 menu.addEventListener('click', event => {
   if (event.target.closest('a')) setMenu(false);
 });
+
 const navLinks = [...document.querySelectorAll('header [data-section]')];
 if (document.body.classList.contains('project-page')) {
   toggle.classList.add('active');
-  menu.querySelector('a[href="./counthub.html"]').setAttribute('aria-current', 'page');
+  menu.querySelectorAll('a').forEach(link => {
+    if (new URL(link.href).pathname === location.pathname) link.setAttribute('aria-current', 'page');
+  });
 } else {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
