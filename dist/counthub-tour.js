@@ -13,9 +13,10 @@ const slides = [
 {feature:2,label:'파일 준비',image:'06-source',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 파일 준비 화면',title:'양식이 서로 다른 거래처의 입출고 엑셀 파일을 준비합니다.',copy:'거래처마다 다른 엑셀 파일을 업무에 맞는 양식으로 정리하는 과정입니다.'},
 {feature:2,label:'양식 변환',image:'07-convert',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 양식 변환 화면',title:'엑셀 데이터를 WMS 등록 등 업무에 필요한 양식으로 변환합니다.',copy:'반복해서 정리하던 엑셀 데이터를 WMS 등록 등 필요한 양식으로 바꿉니다.'},
 {feature:2,label:'결과 활용',image:'08-results',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 결과 활용 화면',title:'변환 결과를 확인하고 입출고 전산 등록에 활용합니다.',copy:'변환 결과를 확인하고 입출고 전산 등록 작업에 활용합니다.'},
-{feature:3,label:'일정 등록',title:'직원들과 공유할 업무 일정을 등록합니다.',copy:'직원들과 공유할 업무 일정을 일정표에 기록합니다.'},
-{feature:3,label:'자료 첨부',title:'일정에 필요한 첨부파일을 함께 공유합니다.',copy:'일정과 관련된 첨부파일을 함께 공유합니다.'},
-{feature:3,label:'일정 공유',title:'공용 폴더를 통해 직원들과 일정과 자료를 공유합니다.',copy:'직원들이 함께 사용하는 폴더를 통해 일정과 자료를 확인합니다.'},
+{feature:3,intro:true,label:'기능 진입',image:'00-entry',imageFolder:'schedule',alt:'CountHub 메인 화면의 일정표 메뉴 위치',title:'메인 화면에서 일정표를 선택해 공유 일정을 확인합니다.',copy:''},
+{feature:3,label:'공용폴더 선택',image:'01-folder',imageFolder:'schedule',alt:'일정표의 공용 폴더 선택 버튼',title:'직원들과 같은 일정을 사용할 공용 폴더를 선택합니다.',copy:'일정과 첨부파일을 함께 관리할 공용 폴더를 연결합니다.'},
+{feature:3,label:'일정 등록',image:'02-register',imageFolder:'schedule',alt:'일정 등록 창의 날짜·셀러·엑셀 첨부·메모 입력 화면',title:'날짜와 일정 내용을 입력하고 필요한 엑셀 파일을 첨부해 저장합니다.',copy:'업무 일정과 관련 자료를 함께 등록합니다.'},
+{feature:3,label:'일정 공유',image:'03-share',imageFolder:'schedule',alt:'공유 일정표에서 등록된 일정과 첨부파일을 확인하는 화면',title:'공용 폴더에 저장된 일정과 첨부파일을 직원들과 함께 확인합니다.',copy:'등록한 일정을 일정표에서 선택해 상세 내용을 확인합니다.'},
 {feature:4,label:'품목 찾기',title:'공유된 품목위치 데이터에서 필요한 품목을 찾습니다.',copy:'직원들과 공유하는 품목위치 데이터에서 필요한 품목을 찾습니다.'},
 {feature:4,label:'위치 등록',title:'품목의 보관 위치를 등록하거나 변경된 위치로 수정합니다.',copy:'품목과 위치 정보를 등록하거나 변경된 내용을 수정합니다.'},
 {feature:4,label:'직원과 공유',title:'저장한 품목위치를 PC와 Android에서 함께 확인합니다.',copy:'저장한 품목위치를 PC와 Android에서 함께 사용합니다.'},
@@ -46,7 +47,7 @@ function updatePages(slide){
 function show(index){current=Math.max(0,Math.min(slides.length-1,index));const slide=slides[current];get('tour-welcome').hidden=current!==0;get('tour-image').toggleAttribute('hidden',!slide.image);get('tour-summary').hidden=current===0||!!slide.image;
 if(slide.image){get('tour-image').src='./assets/'+(slide.imageFolder||'signup')+'/'+slide.image+'.jpg';get('tour-image').alt=slide.alt;}
 get('summary-number').textContent='PC FEATURE / '+String(slide.feature).padStart(2,'0');get('summary-title').textContent=slide.title;get('summary-copy').textContent=slide.copy;
-get('tour-category').textContent=slide.feature?'0'+slide.feature+' / '+names[slide.feature]:'PC 기능 둘러보기';get('tour-title').textContent=slide.title;const featureSlides=slides.filter(s=>s.feature===slide.feature&&!s.intro);get('tour-counter').textContent=slide.intro?'02 기능 · 시작 안내':slide.feature?'0'+slide.feature+' 기능 · '+(featureSlides.indexOf(slide)+1)+' / '+featureSlides.length+' 단계':'PC / 06 FEATURES';get('tour-prev').disabled=current===0;get('tour-next').disabled=current===slides.length-1;
+get('tour-category').textContent=slide.feature?'0'+slide.feature+' / '+names[slide.feature]:'PC 기능 둘러보기';get('tour-title').textContent=slide.title;const featureSlides=slides.filter(s=>s.feature===slide.feature&&!s.intro);get('tour-counter').textContent=slide.intro?'0'+slide.feature+' 기능 · 시작 안내':slide.feature?'0'+slide.feature+' 기능 · '+(featureSlides.indexOf(slide)+1)+' / '+featureSlides.length+' 단계':'PC / 06 FEATURES';get('tour-prev').disabled=current===0;get('tour-next').disabled=current===slides.length-1;
 updatePages(slide);document.querySelectorAll('.tour-feature').forEach(button=>{const active=Number(button.dataset.feature)===slide.feature;button.classList.toggle('is-current',active);if(active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});}
 get('tour-start').addEventListener('click',()=>{show(1);get('tour-next').focus({preventScroll:true});});get('tour-prev').addEventListener('click',()=>show(current-1));get('tour-next').addEventListener('click',()=>show(current+1));
 const development=[
