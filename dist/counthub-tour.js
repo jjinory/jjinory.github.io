@@ -4,14 +4,14 @@ const slides = [
 {feature:1,label:'인증 메일',title:'이메일로 받은 6자리 인증번호는 10분 동안 유효합니다.',copy:'메일로 받은 6자리 인증번호는 10분 동안 사용할 수 있습니다.',image:'03-email',alt:'CountHub에서 실제 발송한 인증번호 메일'},
 {feature:1,label:'번호 확인',title:'앱에서 인증번호를 확인한 뒤 회원가입을 요청합니다.',copy:'6자리 번호를 입력해 인증을 마치고 회원가입을 요청합니다.',image:'02-verification',alt:'앱 안의 이메일 인증번호 입력 화면'},
 {feature:1,label:'관리자 승인',title:'관리자 전용 메뉴에서 가입 요청을 승인하면 업무를 시작할 수 있습니다.',copy:'관리자만 회원 관리 메뉴에서 가입 요청을 확인하고 승인할 수 있습니다.',image:'04-approval',alt:'관리자 전용 회원 관리 및 승인 화면'},
-{feature:2,label:'기준정보 설정',title:'설정 버튼에서 셀러·상품구분·쇼핑몰·양식지를 등록하고 관리합니다.',copy:'설정 → DB: 변환 화면에서 사용할 기준정보를 추가하고 목록 순서를 정합니다.'},
-{feature:2,label:'양식지 컬럼',title:'양식지마다 상품명·수량·SKU 등이 들어 있는 엑셀 열을 지정합니다.',copy:'설정 → 양식지 컬럼: SKU, 상품명, 유통기한, LOT, 입고예정수량의 열 위치를 연결합니다.'},
-{feature:2,label:'셀러별 양식',title:'셀러별 기본 양식지를 연결해 셀러 선택 시 자동으로 불러옵니다.',copy:'설정 → 셀러-양식지: 거래처마다 사용할 양식을 지정하고 필요하면 연결을 해제합니다.'},
-{feature:2,label:'기본 템플릿',title:'입고·검수·거래명세서에 사용할 기본 엑셀 양식을 등록합니다.',copy:'설정 → 템플릿 기본양식: 입고파일, 입고검수, 거래명세서, 출고검수 양식을 클릭하거나 드래그해 등록합니다.'},
-{feature:2,label:'입·출고지 관리',title:'입·출고지의 이름·주소·담당자·전화번호를 등록하고 수정합니다.',copy:'설정 → 입/출고지 관리: 입고와 출고에서 사용할 장소 정보를 저장하고 검색합니다.'},
-{feature:2,label:'파일 준비',title:'양식이 서로 다른 거래처의 입출고 엑셀 파일을 준비합니다.',copy:'거래처마다 다른 엑셀 파일을 업무에 맞는 양식으로 정리하는 과정입니다.'},
-{feature:2,label:'양식 변환',title:'엑셀 데이터를 WMS 등록 등 업무에 필요한 양식으로 변환합니다.',copy:'반복해서 정리하던 엑셀 데이터를 WMS 등록 등 필요한 양식으로 바꿉니다.'},
-{feature:2,label:'결과 활용',title:'변환 결과를 확인하고 입출고 전산 등록에 활용합니다.',copy:'변환 결과를 확인하고 입출고 전산 등록 작업에 활용합니다.'},
+{feature:2,label:'기준정보 설정',image:'01-reference',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 기준정보 설정 화면',title:'설정 버튼에서 셀러·상품구분·쇼핑몰·양식지를 등록하고 관리합니다.',copy:'설정 → DB: 변환 화면에서 사용할 기준정보를 추가하고 목록 순서를 정합니다.'},
+{feature:2,label:'양식지 컬럼',image:'02-columns',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 양식지 컬럼 화면',title:'양식지마다 상품명·수량·SKU 등이 들어 있는 엑셀 열을 지정합니다.',copy:'설정 → 양식지 컬럼: SKU, 상품명, 유통기한, LOT, 입고예정수량의 열 위치를 연결합니다.'},
+{feature:2,label:'셀러별 양식',image:'03-seller-form',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 셀러별 양식 화면',title:'셀러별 기본 양식지를 연결해 셀러 선택 시 자동으로 불러옵니다.',copy:'설정 → 셀러-양식지: 거래처마다 사용할 양식을 지정하고 필요하면 연결을 해제합니다.'},
+{feature:2,label:'기본 템플릿',image:'04-templates',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 기본 템플릿 화면',title:'입고·검수·거래명세서에 사용할 기본 엑셀 양식을 등록합니다.',copy:'설정 → 템플릿 기본양식: 입고파일, 입고검수, 거래명세서, 출고검수 양식을 클릭하거나 드래그해 등록합니다.'},
+{feature:2,label:'입·출고지 관리',image:'05-locations',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 입·출고지 관리 화면',title:'입·출고지의 이름·주소·담당자·전화번호를 등록하고 수정합니다.',copy:'설정 → 입/출고지 관리: 입고와 출고에서 사용할 장소 정보를 저장하고 검색합니다.'},
+{feature:2,label:'파일 준비',image:'06-source',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 파일 준비 화면',title:'양식이 서로 다른 거래처의 입출고 엑셀 파일을 준비합니다.',copy:'거래처마다 다른 엑셀 파일을 업무에 맞는 양식으로 정리하는 과정입니다.'},
+{feature:2,label:'양식 변환',image:'07-convert',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 양식 변환 화면',title:'엑셀 데이터를 WMS 등록 등 업무에 필요한 양식으로 변환합니다.',copy:'반복해서 정리하던 엑셀 데이터를 WMS 등록 등 필요한 양식으로 바꿉니다.'},
+{feature:2,label:'결과 활용',image:'08-results',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 결과 활용 화면',title:'변환 결과를 확인하고 입출고 전산 등록에 활용합니다.',copy:'변환 결과를 확인하고 입출고 전산 등록 작업에 활용합니다.'},
 {feature:3,label:'품목 찾기',title:'공유된 품목위치 데이터에서 필요한 품목을 찾습니다.',copy:'직원들과 공유하는 품목위치 데이터에서 필요한 품목을 찾습니다.'},
 {feature:3,label:'위치 등록',title:'품목의 보관 위치를 등록하거나 변경된 위치로 수정합니다.',copy:'품목과 위치 정보를 등록하거나 변경된 내용을 수정합니다.'},
 {feature:3,label:'직원과 공유',title:'저장한 품목위치를 PC와 Android에서 함께 확인합니다.',copy:'저장한 품목위치를 PC와 Android에서 함께 사용합니다.'},
@@ -43,7 +43,7 @@ function updatePages(slide){
  stepButtons.forEach(({button,index})=>{if(index===current)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});
 }
 function show(index){current=Math.max(0,Math.min(slides.length-1,index));const slide=slides[current];get('tour-welcome').hidden=current!==0;get('tour-image').toggleAttribute('hidden',!slide.image);get('tour-summary').hidden=current===0||!!slide.image;
-if(slide.image){get('tour-image').src='./assets/signup/'+slide.image+'.jpg';get('tour-image').alt=slide.alt;}
+if(slide.image){get('tour-image').src='./assets/'+(slide.imageFolder||'signup')+'/'+slide.image+'.jpg';get('tour-image').alt=slide.alt;}
 get('summary-number').textContent='PC FEATURE / '+String(slide.feature).padStart(2,'0');get('summary-title').textContent=slide.title;get('summary-copy').textContent=slide.copy;
 get('tour-category').textContent=slide.feature?'0'+slide.feature+' / '+names[slide.feature]:'PC 기능 둘러보기';get('tour-title').textContent=slide.title;const featureSlides=slides.filter(s=>s.feature===slide.feature);get('tour-counter').textContent=slide.feature?'0'+slide.feature+' 기능 · '+(featureSlides.indexOf(slide)+1)+' / '+featureSlides.length+' 단계':'PC / 06 FEATURES';get('tour-prev').disabled=current===0;get('tour-next').disabled=current===slides.length-1;
 updatePages(slide);document.querySelectorAll('.tour-feature').forEach(button=>{const active=Number(button.dataset.feature)===slide.feature;button.classList.toggle('is-current',active);if(active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});}
