@@ -21,9 +21,10 @@ const slides = [
 {feature:4,label:'품목등록',image:'01-register',imageFolder:'item-location',alt:'품목 등록 창의 품명·그룹·위치·메모 입력 화면',title:'품명과 그룹, 보관 위치, 메모를 입력해 품목을 등록합니다.',copy:'품목과 보관 위치 정보를 등록합니다.'},
 {feature:4,label:'공유',image:'02-share',imageFolder:'item-location',alt:'등록된 품목과 위치가 직원들과 공유되는 목록 화면',title:'등록한 품목과 보관 위치를 직원들과 함께 확인합니다.',copy:'저장한 품목위치를 직원들과 공유합니다.'},
 {feature:4,label:'품목찾기',image:'03-search',imageFolder:'item-location',alt:'품명 일부를 검색해 해당 품목의 보관 위치를 찾는 화면',title:'품명의 일부를 검색해 필요한 품목의 보관 위치를 찾습니다.',copy:'공유된 품목 정보에서 필요한 보관 위치를 검색합니다.'},
-{feature:5,label:'업무 등록',title:'직원들과 함께 처리할 업무를 등록합니다.',copy:'직원들이 확인할 수 있도록 처리할 업무를 공유합니다.'},
-{feature:5,label:'진행 상태',title:'업무의 진행 상태를 시작·중단·완료로 관리합니다.',copy:'작업 상황에 따라 시작·중단·완료 상태를 변경합니다.'},
-{feature:5,label:'공유 확인',title:'PC와 Android에서 같은 업무 현황을 확인합니다.',copy:'PC와 Android에서 같은 처리업무와 상태를 확인합니다.'},
+{feature:5,intro:true,label:'기능 진입',image:'00-entry',imageFolder:'tasks',alt:'CountHub 메인 화면의 처리업무 메뉴 위치',title:'메인 화면에서 처리업무를 선택해 직원들과 업무를 공유합니다.',copy:''},
+{feature:5,label:'업무등록',image:'01-register',imageFolder:'tasks',alt:'처리업무 등록 창의 업무내용과 중요도 입력 화면',title:'업무내용과 중요도를 입력해 함께 처리할 업무를 등록합니다.',copy:'처리할 업무의 내용과 중요도를 정해 저장합니다.'},
+{feature:5,label:'업무공유',image:'02-share',imageFolder:'tasks',alt:'등록한 업무가 직원들과 공유되는 처리업무 목록',title:'등록한 업무를 직원들과 공유하고 목록에서 함께 확인합니다.',copy:'등록한 업무를 공통 목록에서 확인합니다.'},
+{feature:5,label:'진행상태 확인',image:'03-status',imageFolder:'tasks',alt:'작업 중인 업무의 진행상태와 작업자를 표시하는 화면',title:'업무별 진행상태와 작업자를 확인해 누가 처리 중인지 파악합니다.',copy:'직원들이 업무의 진행 상황과 작업자를 함께 확인합니다.'},
 {feature:6,label:'양식 준비',title:'안전교육일지 제작에 사용할 엑셀 양식을 준비합니다.',copy:'반복 작성하는 안전교육일지를 엑셀 양식으로 제작하는 과정입니다.'},
 {feature:6,label:'사진 활용',title:'교육일지에 넣을 사진을 준비합니다.',copy:'교육일지에 필요한 사진을 준비해 문서 작성에 활용합니다.'},
 {feature:6,label:'일지 제작',title:'엑셀 양식과 사진을 활용해 안전교육일지를 제작합니다.',copy:'엑셀 양식과 사진으로 반복 문서를 작성합니다.'}
