@@ -25,9 +25,10 @@ const slides = [
 {feature:5,label:'업무등록',image:'01-register',imageFolder:'tasks',alt:'처리업무 등록 창의 업무내용과 중요도 입력 화면',title:'업무내용과 중요도를 입력해 함께 처리할 업무를 등록합니다.',copy:'처리할 업무의 내용과 중요도를 정해 저장합니다.'},
 {feature:5,label:'업무공유',image:'02-share',imageFolder:'tasks',alt:'등록한 업무가 직원들과 공유되는 처리업무 목록',title:'등록한 업무를 직원들과 공유하고 목록에서 함께 확인합니다.',copy:'등록한 업무를 공통 목록에서 확인합니다.'},
 {feature:5,label:'진행상태 확인',image:'03-status',imageFolder:'tasks',alt:'작업 중인 업무의 진행상태와 작업자를 표시하는 화면',title:'업무별 진행상태와 작업자를 확인해 누가 처리 중인지 파악합니다.',copy:'직원들이 업무의 진행 상황과 작업자를 함께 확인합니다.'},
-{feature:6,label:'양식 준비',title:'안전교육일지 제작에 사용할 엑셀 양식을 준비합니다.',copy:'반복 작성하는 안전교육일지를 엑셀 양식으로 제작하는 과정입니다.'},
-{feature:6,label:'사진 활용',title:'교육일지에 넣을 사진을 준비합니다.',copy:'교육일지에 필요한 사진을 준비해 문서 작성에 활용합니다.'},
-{feature:6,label:'일지 제작',title:'엑셀 양식과 사진을 활용해 안전교육일지를 제작합니다.',copy:'엑셀 양식과 사진으로 반복 문서를 작성합니다.'}
+{"feature":6,"intro":true,"label":"기능 진입","image":"00-entry","imageFolder":"safety-journal","alt":"CountHub 메인 화면의 안전교육일지 메뉴 위치","title":"메인 화면에서 안전교육일지를 선택해 교육일지 제작을 시작합니다.","copy":""},
+{"feature":6,"label":"사진첨부","image":"01-photos","imageFolder":"safety-journal","alt":"안전교육일지에 교육 사진 두 장을 첨부하는 화면","title":"교육 사진 두 장을 첨부하고 위치와 크기를 조절합니다.","copy":""},
+{"feature":6,"label":"정보작성","image":"02-info","imageFolder":"safety-journal","alt":"안전교육일지의 교육 날짜와 인원 입력 화면","title":"교육 날짜와 인원을 입력한 뒤 엑셀 만들기를 선택합니다.","copy":""},
+{"feature":6,"label":"일지제작","image":"03-output","imageFolder":"safety-journal","alt":"등록된 엑셀 양식과 교육 정보 및 사진이 반영된 안전교육일지 비교","title":"등록된 엑셀 양식에 교육 정보와 사진을 반영해 안전교육일지를 제작합니다.","copy":""}
 ];
 const names=['','이메일 인증 회원가입','입출고 파일 변환','일정표 공유','품목위치 저장·공유','처리업무 공유','안전교육일지 제작'];
 let current=0;
