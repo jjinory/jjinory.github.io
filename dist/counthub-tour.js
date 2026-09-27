@@ -13,20 +13,20 @@ const slides = [
 {feature:2,label:'파일 준비',image:'06-source',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 파일 준비 화면',title:'양식이 서로 다른 거래처의 입출고 엑셀 파일을 준비합니다.',copy:'거래처마다 다른 엑셀 파일을 업무에 맞는 양식으로 정리하는 과정입니다.'},
 {feature:2,label:'양식 변환',image:'07-convert',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 양식 변환 화면',title:'엑셀 데이터를 WMS 등록 등 업무에 필요한 양식으로 변환합니다.',copy:'반복해서 정리하던 엑셀 데이터를 WMS 등록 등 필요한 양식으로 바꿉니다.'},
 {feature:2,label:'결과 활용',image:'08-results',imageFolder:'conversion',alt:'CountHub 입출고 파일 변환 — 결과 활용 화면',title:'변환 결과를 확인하고 입출고 전산 등록에 활용합니다.',copy:'변환 결과를 확인하고 입출고 전산 등록 작업에 활용합니다.'},
-{feature:3,label:'품목 찾기',title:'공유된 품목위치 데이터에서 필요한 품목을 찾습니다.',copy:'직원들과 공유하는 품목위치 데이터에서 필요한 품목을 찾습니다.'},
-{feature:3,label:'위치 등록',title:'품목의 보관 위치를 등록하거나 변경된 위치로 수정합니다.',copy:'품목과 위치 정보를 등록하거나 변경된 내용을 수정합니다.'},
-{feature:3,label:'직원과 공유',title:'저장한 품목위치를 PC와 Android에서 함께 확인합니다.',copy:'저장한 품목위치를 PC와 Android에서 함께 사용합니다.'},
-{feature:4,label:'업무 등록',title:'직원들과 함께 처리할 업무를 등록합니다.',copy:'직원들이 확인할 수 있도록 처리할 업무를 공유합니다.'},
-{feature:4,label:'진행 상태',title:'업무의 진행 상태를 시작·중단·완료로 관리합니다.',copy:'작업 상황에 따라 시작·중단·완료 상태를 변경합니다.'},
-{feature:4,label:'공유 확인',title:'PC와 Android에서 같은 업무 현황을 확인합니다.',copy:'PC와 Android에서 같은 처리업무와 상태를 확인합니다.'},
-{feature:5,label:'일정 등록',title:'직원들과 공유할 업무 일정을 등록합니다.',copy:'직원들과 공유할 업무 일정을 일정표에 기록합니다.'},
-{feature:5,label:'자료 첨부',title:'일정에 필요한 첨부파일을 함께 공유합니다.',copy:'일정과 관련된 첨부파일을 함께 공유합니다.'},
-{feature:5,label:'일정 공유',title:'공용 폴더를 통해 직원들과 일정과 자료를 공유합니다.',copy:'직원들이 함께 사용하는 폴더를 통해 일정과 자료를 확인합니다.'},
+{feature:3,label:'일정 등록',title:'직원들과 공유할 업무 일정을 등록합니다.',copy:'직원들과 공유할 업무 일정을 일정표에 기록합니다.'},
+{feature:3,label:'자료 첨부',title:'일정에 필요한 첨부파일을 함께 공유합니다.',copy:'일정과 관련된 첨부파일을 함께 공유합니다.'},
+{feature:3,label:'일정 공유',title:'공용 폴더를 통해 직원들과 일정과 자료를 공유합니다.',copy:'직원들이 함께 사용하는 폴더를 통해 일정과 자료를 확인합니다.'},
+{feature:4,label:'품목 찾기',title:'공유된 품목위치 데이터에서 필요한 품목을 찾습니다.',copy:'직원들과 공유하는 품목위치 데이터에서 필요한 품목을 찾습니다.'},
+{feature:4,label:'위치 등록',title:'품목의 보관 위치를 등록하거나 변경된 위치로 수정합니다.',copy:'품목과 위치 정보를 등록하거나 변경된 내용을 수정합니다.'},
+{feature:4,label:'직원과 공유',title:'저장한 품목위치를 PC와 Android에서 함께 확인합니다.',copy:'저장한 품목위치를 PC와 Android에서 함께 사용합니다.'},
+{feature:5,label:'업무 등록',title:'직원들과 함께 처리할 업무를 등록합니다.',copy:'직원들이 확인할 수 있도록 처리할 업무를 공유합니다.'},
+{feature:5,label:'진행 상태',title:'업무의 진행 상태를 시작·중단·완료로 관리합니다.',copy:'작업 상황에 따라 시작·중단·완료 상태를 변경합니다.'},
+{feature:5,label:'공유 확인',title:'PC와 Android에서 같은 업무 현황을 확인합니다.',copy:'PC와 Android에서 같은 처리업무와 상태를 확인합니다.'},
 {feature:6,label:'양식 준비',title:'안전교육일지 제작에 사용할 엑셀 양식을 준비합니다.',copy:'반복 작성하는 안전교육일지를 엑셀 양식으로 제작하는 과정입니다.'},
 {feature:6,label:'사진 활용',title:'교육일지에 넣을 사진을 준비합니다.',copy:'교육일지에 필요한 사진을 준비해 문서 작성에 활용합니다.'},
 {feature:6,label:'일지 제작',title:'엑셀 양식과 사진을 활용해 안전교육일지를 제작합니다.',copy:'엑셀 양식과 사진으로 반복 문서를 작성합니다.'}
 ];
-const names=['','이메일 인증 회원가입','입출고 파일 변환','품목위치 저장·공유','처리업무 공유','일정표 공유','안전교육일지 제작'];
+const names=['','이메일 인증 회원가입','입출고 파일 변환','일정표 공유','품목위치 저장·공유','처리업무 공유','안전교육일지 제작'];
 let current=0;
 const get=id=>document.getElementById(id);
 const groups=document.createElement('div');groups.className='tour-groups';groups.setAttribute('aria-label','PC 주요 기능');
@@ -52,9 +52,9 @@ get('tour-start').addEventListener('click',()=>{show(1);get('tour-next').focus({
 const development=[
 {stack:['Electron','Supabase Auth','Edge Functions API'],copy:'앱에서 이메일 인증번호 발송·확인 API를 호출합니다. 서버에서 인증 여부를 검증하고, 가입 요청과 관리자 승인을 나누어 처리했습니다.'},
 {stack:['JavaScript','ExcelJS','XLSX'],copy:'설정 화면에서 거래처별 엑셀 열 위치와 기본 양식을 지정하고, 셀러 선택 시 연결된 양식을 불러오도록 구현했습니다. 등록한 템플릿으로 결과 파일을 생성하며, 기준정보와 입·출고지 정보도 관리할 수 있습니다.'},
+{stack:['Node.js','파일 시스템','Electron IPC'],copy:'공용 폴더에 일정과 첨부파일을 저장해 직원들과 공유합니다. 화면의 요청을 Electron 메인 프로세스로 전달하고 파일을 읽고 저장하도록 구성했습니다.'},
 {stack:['PostgreSQL','Edge Functions API','Electron'],copy:'품목과 위치 정보를 데이터베이스에 저장하고 API로 조회·등록·수정합니다. PC와 Android가 같은 정보를 공유하도록 연결했습니다.'},
 {stack:['PostgreSQL','Edge Functions API','JavaScript'],copy:'처리업무를 등록하고 시작·중단·완료 상태를 API로 관리합니다. 직원들이 PC와 Android에서 같은 업무 현황을 확인할 수 있게 구현했습니다.'},
-{stack:['Node.js','파일 시스템','Electron IPC'],copy:'공용 폴더에 일정과 첨부파일을 저장해 직원들과 공유합니다. 화면의 요청을 Electron 메인 프로세스로 전달하고 파일을 읽고 저장하도록 구성했습니다.'},
 {stack:['JSZip','XML','Node.js'],copy:'엑셀 양식 내부의 XML과 이미지 데이터를 처리해 안전교육일지를 만듭니다. 기존 양식에 필요한 내용과 사진을 반영하는 반복 문서 작성 기능을 구현했습니다.'}
 ];
 const devDialog=get('dev-dialog');let devTrigger;
